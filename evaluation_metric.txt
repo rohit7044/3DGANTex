@@ -1,0 +1,10 @@
+Evaluation Results:
+SSIM,MS_SSIM,Perceptual Index,FSIM
+FFHQ-Male-No glasses- 0.67,0.66,0.39,0.72
+FFHQ-Male Glasses- 0.67, 0.62,0.36, 0.78
+FFHQ-Female No Glasses- 0.60,0.62,0.24,0.75
+FFHQ-Female-Glasses-0.57,0.64,0.50,0.74
+In-the-wild-Male Glasses- 0.49,0.23,0.48,0.65
+In-the-wild-Male No glasses- 0.50,0.27,0.84,0.68
+In-the-wild-Female Glasses- 0.44,0.18,0.67,0.71
+In-the-wild-Female No Glasses-0.50,0.36,0.71,0.69
