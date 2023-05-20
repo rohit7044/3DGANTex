@@ -4,7 +4,6 @@ from PIL import Image
 import torch
 import dlib
 import torchvision.transforms as transforms
-import os
 import yaml
 from models.stylegan3.model import GeneratorType
 from utils.common import tensor2im
@@ -15,11 +14,9 @@ from ThreeDDFA_utils.uv import uv_tex
 from ThreeDDFA_utils.serialization import ser_to_obj
 from FaceBoxes.FaceBoxes_ONNX import FaceBoxes_ONNX
 from TDDFA.TDDFA_ONNX import TDDFA_ONNX
-from evaluation import compute
 
 
-
-# from prepare_data import
+# Prepare the Data
 experiment_type = 'restyle_e4e_ffhq' # can choose between e4e and pSp encoding
 # Load the weights
 pSp_model_path = "./pretrained_models/restyle_pSp_ffhq.pt"
@@ -30,7 +27,7 @@ cfg = yaml.load(open('ThreeDDFA_configs/mb1_120x120.yml'), Loader=yaml.SafeLoade
 # Inversion iteration Higher means getting closer. But sometimes 1 iteration produce good results
 n_iters_per_batch = 3
 # Input image
-face_img_path = '/home/ci3d/repository/3D-GANTex/input_data/00359.png' # Change the file name here
+face_img_path = '/home/ci3d/repository/3D-GANTex/input_data/00012.png' # Change the file name here
 pose_img_path = f'output_data/{face_img_path.split("/")[-1].replace(".png", "")}_pose' + '.png' # Change the file name here
 uv_tex_path = f'output_data/{face_img_path.split("/")[-1].replace(".png", "")}_uv_tex' + '.png'# Change the file name here
 obj_tex_path = f'output_data/{face_img_path.split("/")[-1].replace(".png", "")}_obj' + '.obj'
