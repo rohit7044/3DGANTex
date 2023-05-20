@@ -16,14 +16,14 @@ from FaceBoxes.FaceBoxes_ONNX import FaceBoxes_ONNX
 from TDDFA.TDDFA_ONNX import TDDFA_ONNX
 
 
-# Prepare the Data
-experiment_type = 'restyle_e4e_ffhq' # can choose between e4e and pSp encoding
+
 # Load the weights
 pSp_model_path = "./pretrained_models/restyle_pSp_ffhq.pt"
 e4e_model_path = "./pretrained_models/restyle_e4e_ffhq.pt"
 shape_predictor_path = "./pretrained_models/shape_predictor_68_face_landmarks.dat"
 cfg = yaml.load(open('ThreeDDFA_configs/mb1_120x120.yml'), Loader=yaml.SafeLoader)
-
+# Prepare the Data
+experiment_type = 'restyle_e4e_ffhq' # can choose between e4e and pSp encoding
 # Inversion iteration Higher means getting closer. But sometimes 1 iteration produce good results
 n_iters_per_batch = 3
 # Input image
@@ -32,7 +32,7 @@ pose_img_path = f'output_data/{face_img_path.split("/")[-1].replace(".png", "")}
 uv_tex_path = f'output_data/{face_img_path.split("/")[-1].replace(".png", "")}_uv_tex' + '.png'# Change the file name here
 obj_tex_path = f'output_data/{face_img_path.split("/")[-1].replace(".png", "")}_obj' + '.obj'
 edit_direction = 'pose'
-# Range of the pose
+# Range of the pose Depends on how much you want the face to move
 min_value = -3
 max_value = 5
 # out of the range above, take the index which will generate the frontal face
@@ -150,7 +150,7 @@ frontal_face_img = np.asarray(edit_images[frontal_face_index]) # which image to 
 for image in edit_images[1:]:
     res = np.concatenate([res, image.resize((512, 512))], axis=1)
 pose_img = Image.fromarray(res).convert("RGB")
-pose_img.show()
+# pose_img.show()
 pose_img.save(pose_img_path)
 
 # Generate UV Map using 3DDFA_V2
@@ -171,15 +171,11 @@ uv_tex(frontal_face_img_rgb,ver_lst,tddfa.tri,wfp= uv_tex_path )
 ser_to_obj(frontal_face_img_rgb, ver_lst, tddfa.tri,height = 1024, wfp=obj_tex_path)
 
 # show the .obj file
-import open3d as o3d
+# import open3d as o3d
 
 # Read the OBJ file
-mesh = o3d.io.read_triangle_mesh(obj_tex_path)
+# mesh = o3d.io.read_triangle_mesh(obj_tex_path)
 
 # Visualize the mesh
-o3d.visualization.draw_geometries([mesh])
-
-# Calculate SSIM
-# compute(cropped_image,inversed_img)
-
+# o3d.visualization.draw_geometries([mesh])
 
