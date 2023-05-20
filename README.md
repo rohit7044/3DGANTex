@@ -15,7 +15,7 @@ face shape.
 [![Stargazers repo roster for @rohit7044/3DGANTex](https://reporoster.com/stars/rohit7044/3DGANTex)](https://github.com/rohit7044/3DGANTex/stargazers)
 
 [![Forkers repo roster for @rohit7044/3DGANTex](https://reporoster.com/forks/rohit7044/3DGANTex)](https://github.com/rohit7044/3DGANTex/network/members)
-## White paper soming soon!
+## White paper coming soon!
 ![workflow](https://lucid.app/publicSegments/view/8ff49995-cb25-47ae-9dca-5aa88caee4a9/image.jpeg)
 
 ## Requirements
