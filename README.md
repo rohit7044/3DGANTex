@@ -50,11 +50,11 @@ sh ./TDDFA_build.sh
 5. Finally after making the changes, upon running the code you will get multi_view,texture map and 3d model and it will be saved in `output_data`
 
 ## Special Thanks
-[Third Time's the Charm? Image and Video Editing with StyleGAN3](https://github.com/yuval-alaluf/stylegan3-editing)
+* [Third Time's the Charm? Image and Video Editing with StyleGAN3](https://github.com/yuval-alaluf/stylegan3-editing)
 
-[InterFaceGAN - Interpreting the Latent Space of GANs for Semantic Face Editing](https://github.com/genforce/interfacegan)
+* [InterFaceGAN - Interpreting the Latent Space of GANs for Semantic Face Editing](https://github.com/genforce/interfacegan)
 
-[3DDFA_V2 Towards Fast, Accurate and Stable 3D Dense Face Alignment](https://github.com/cleardusk/3DDFA_V2)
+* [3DDFA_V2 Towards Fast, Accurate and Stable 3D Dense Face Alignment](https://github.com/cleardusk/3DDFA_V2)
 
 ## Important Note
 1. The 3D face model has uv texture embedded but it only shows the texture on Meshlab and Open3D
