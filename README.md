@@ -1,4 +1,4 @@
-# 3D Face Reconstruction with StyleGAN3-based Texture Synthesis from Multi-View Images
+# 3D Face Reconstruction with StyleGAN3-based Multi-View Images and 3DDFA based Mesh Generation
 
 ---
 > 3D model generation from a single image is a challenging task due to the lack of
