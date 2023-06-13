@@ -1,4 +1,4 @@
-# 3D Face Reconstruction with StyleGAN3-based Texture Synthesis from Multi-View Images
+# 3D Face Reconstruction with StyleGAN3-based Multi-View Images and 3DDFA based Mesh Generation
 
 ---
 > 3D model generation from a single image is a challenging task due to the lack of
@@ -15,7 +15,7 @@ face shape.
 [![Stargazers repo roster for @rohit7044/3DGANTex](https://reporoster.com/stars/rohit7044/3DGANTex)](https://github.com/rohit7044/3DGANTex/stargazers)
 
 [![Forkers repo roster for @rohit7044/3DGANTex](https://reporoster.com/forks/rohit7044/3DGANTex)](https://github.com/rohit7044/3DGANTex/network/members)
-## White paper soming soon!
+## White paper coming soon!
 ![workflow](https://lucid.app/publicSegments/view/8ff49995-cb25-47ae-9dca-5aa88caee4a9/image.jpeg)
 
 ## Requirements
@@ -50,11 +50,11 @@ sh ./TDDFA_build.sh
 5. Finally after making the changes, upon running the code you will get multi_view,texture map and 3d model and it will be saved in `output_data`
 
 ## Special Thanks
-[Third Time's the Charm? Image and Video Editing with StyleGAN3](https://github.com/yuval-alaluf/stylegan3-editing)
+* [Third Time's the Charm? Image and Video Editing with StyleGAN3](https://github.com/yuval-alaluf/stylegan3-editing)
 
-[InterFaceGAN - Interpreting the Latent Space of GANs for Semantic Face Editing](https://github.com/genforce/interfacegan)
+* [InterFaceGAN - Interpreting the Latent Space of GANs for Semantic Face Editing](https://github.com/genforce/interfacegan)
 
-[3DDFA_V2 Towards Fast, Accurate and Stable 3D Dense Face Alignment](https://github.com/cleardusk/3DDFA_V2)
+* [3DDFA_V2 Towards Fast, Accurate and Stable 3D Dense Face Alignment](https://github.com/cleardusk/3DDFA_V2)
 
 ## Important Note
 1. The 3D face model has uv texture embedded but it only shows the texture on Meshlab and Open3D
