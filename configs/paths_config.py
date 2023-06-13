@@ -10,37 +10,37 @@ dataset_paths = {
 
 model_paths = {
 	# models for backbones and losses
-	'ir_se50': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/model_ir_se50.pth'),
+	'ir_se50': Path('3D-GANTex/pretrained_models/model_ir_se50.pth'),
 	# stylegan3 generators
-	'stylegan3_ffhq': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/stylegan3-r-ffhq-1024x1024.pkl'),
-	'stylegan3_ffhq_pt': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/sg3-r-ffhq-1024.pt'),
-	'stylegan3_ffhq_unaligned': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/stylegan3-r-ffhqu-1024x1024.pkl'),
-	'stylegan3_ffhq_unaligned_pt': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/sg3-r-ffhqu-1024.pt'),
+	'stylegan3_ffhq': Path('3D-GANTex/pretrained_models/stylegan3-r-ffhq-1024x1024.pkl'),
+	'stylegan3_ffhq_pt': Path('3D-GANTex/pretrained_models/sg3-r-ffhq-1024.pt'),
+	'stylegan3_ffhq_unaligned': Path('3D-GANTex/pretrained_models/stylegan3-r-ffhqu-1024x1024.pkl'),
+	'stylegan3_ffhq_unaligned_pt': Path('3D-GANTex/pretrained_models/sg3-r-ffhqu-1024.pt'),
 	# model for face alignment
-	'shape_predictor': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/shape_predictor_68_face_landmarks.dat'),
+	'shape_predictor': Path('3D-GANTex/pretrained_models/shape_predictor_68_face_landmarks.dat'),
 	# models for ID similarity computation
-	'curricular_face': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/CurricularFace_Backbone.pth'),
-	'mtcnn_pnet': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/mtcnn/pnet.npy'),
-	'mtcnn_rnet': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/mtcnn/rnet.npy'),
-	'mtcnn_onet': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/mtcnn/onet.npy'),
+	'curricular_face': Path('3D-GANTex/pretrained_models/CurricularFace_Backbone.pth'),
+	'mtcnn_pnet': Path('3D-GANTex/pretrained_models/mtcnn/pnet.npy'),
+	'mtcnn_rnet': Path('3D-GANTex/pretrained_models/mtcnn/rnet.npy'),
+	'mtcnn_onet': Path('3D-GANTex/pretrained_models/mtcnn/onet.npy'),
 	# classifiers used for interfacegan training
-	'age_estimator': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/dex_age_classifier.pth'),
-	'pose_estimator': Path('/home/ci3d/repository/stylegan3-editing/pretrained_models/hopenet_robust_alpha1.pkl')
+	'age_estimator': Path('3D-GANTex/pretrained_models/dex_age_classifier.pth'),
+	'pose_estimator': Path('3D-GANTex/pretrained_models/hopenet_robust_alpha1.pkl')
 }
 
 styleclip_directions = {
 	"ffhq": {
-		'delta_i_c': Path('/home/ci3d/repository/stylegan3-editing/editing/styleclip_global_directions/sg3-r-ffhq-1024/delta_i_c.npy'),
-		's_statistics': Path('/home/ci3d/repository/stylegan3-editing/editing/styleclip_global_directions/sg3-r-ffhq-1024/s_stats'),
+		'delta_i_c': Path('3D-GANTex/editing/styleclip_global_directions/sg3-r-ffhq-1024/delta_i_c.npy'),
+		's_statistics': Path('3D-GANTex/editing/styleclip_global_directions/sg3-r-ffhq-1024/s_stats'),
 	},
-	'templates': Path('/home/ci3d/repository/stylegan3-editing/editing/styleclip_global_directions/templates.txt')
+	'templates': Path('3D-GANTex/editing/styleclip_global_directions/templates.txt')
 }
 
 interfacegan_aligned_edit_paths = {
-	'age': Path('/home/ci3d/repository/stylegan3-editing/editing/interfacegan/boundaries/ffhq/age_boundary.npy'),
-	'smile': Path('/home/ci3d/repository/stylegan3-editing/editing/interfacegan/boundaries/ffhq/Smiling_boundary.npy'),
-	'pose': Path('/home/ci3d/repository/stylegan3-editing/editing/interfacegan/boundaries/ffhq/pose_boundary.npy'),
-	'Male': Path('/home/ci3d/repository/stylegan3-editing/editing/interfacegan/boundaries/ffhq/Male_boundary.npy'),
+	'age': Path('3D-GANTex/editing/interfacegan/boundaries/ffhq/age_boundary.npy'),
+	'smile': Path('3D-GANTex/editing/interfacegan/boundaries/ffhq/Smiling_boundary.npy'),
+	'pose': Path('3D-GANTex/editing/interfacegan/boundaries/ffhq/pose_boundary.npy'),
+	'Male': Path('3D-GANTex/editing/interfacegan/boundaries/ffhq/Male_boundary.npy'),
 }
 
 interfacegan_unaligned_edit_paths = {
