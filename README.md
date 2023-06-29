@@ -12,9 +12,6 @@ face shape.
 [![GitHub license](https://img.shields.io/github/license/rohit7044/3DGANTex)](https://github.com/rohit7044/3DGANTex/blob/main/LICENSE)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/rohit7044/3DGANTex/graphs/commit-activity)
 
-[![Stargazers repo roster for @rohit7044/3DGANTex](https://reporoster.com/stars/rohit7044/3DGANTex)](https://github.com/rohit7044/3DGANTex/stargazers)
-
-[![Forkers repo roster for @rohit7044/3DGANTex](https://reporoster.com/forks/rohit7044/3DGANTex)](https://github.com/rohit7044/3DGANTex/network/members)
 ## White paper coming soon!
 ![workflow](https://lucid.app/publicSegments/view/8ff49995-cb25-47ae-9dca-5aa88caee4a9/image.jpeg)
 
