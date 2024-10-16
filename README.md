@@ -20,9 +20,13 @@ face shape.
 2. Python 3.8
 3. PyTorch(2.0 works great)
 4. OpenCV
-5. Dlib
-6. Cython
-7. Cmake
+5. imageio
+6. Dlib
+7. Cython
+8. Cmake
+9. pyrallis
+10. onnx
+11. onnxruntime
 
 ## StyleGAN3 Encoder
 Download the pretrained encoder from the following links and keep it on `pretrained_model` folder
