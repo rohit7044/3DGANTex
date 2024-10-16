@@ -36,6 +36,14 @@ Download the pretrained encoder from the following links and keep it on `pretrai
 | [ReStyle-pSp Human Faces](https://drive.google.com/file/d/12WZi2a9ORVg-j6d9x4eF-CKpLaURC2W-/view?usp=sharing) | ReStyle-pSp trained on the [FFHQ](https://github.com/NVlabs/ffhq-dataset) dataset over the StyleGAN3 generator. |
 | [ReStyle-e4e Human Faces](https://drive.google.com/file/d/1z_cB187QOc6aqVBdLvYvBjoc93-_EuRm/view) | ReStyle-e4e trained on the [FFHQ](https://github.com/NVlabs/ffhq-dataset) dataset over the StyleGAN3 generator. |
 
+## 3DDFA Weights
+Please go to 
+
+~~~
+3D-GANTex/ThreeDDFA_weights/weights
+~~~
+and follow the instructions there :)
+
 ## Usage
 1. Clone the Repo:
 
