@@ -3,7 +3,7 @@ python setup.py build_ext -i
 to compile
 '''
 
-from distutils.core import setup, Extension
+from setuptools import setup, Extension
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 import numpy
