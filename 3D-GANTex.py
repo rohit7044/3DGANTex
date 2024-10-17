@@ -17,17 +17,28 @@ from TDDFA.TDDFA_ONNX import TDDFA_ONNX
 
 
 
-# Load the weights
-pSp_model_path = "./pretrained_models/restyle_pSp_ffhq.pt"
-e4e_model_path = "./pretrained_models/restyle_e4e_ffhq.pt"
-shape_predictor_path = "./pretrained_models/shape_predictor_68_face_landmarks.dat"
-cfg = yaml.load(open('ThreeDDFA_configs/mb1_120x120.yml'), Loader=yaml.SafeLoader)
+from pathlib import Path
+# Get the current working directory
+current_directory = Path.cwd()
+pSp_model_path = str(current_directory)+"/pretrained_models/restyle_pSp_ffhq.pt"
+e4e_model_path = str(current_directory)+"/pretrained_models/restyle_e4e_ffhq.pt"
+shape_predictor_path = str(current_directory)+"/pretrained_models/shape_predictor_68_face_landmarks.dat"
+threeddfa_configs_path = str(current_directory)+"/ThreeDDFA_configs/mb1_120x120.yml"
+# Load YAML and create a new config with absolute paths while keeping original unchanged
+with open(threeddfa_configs_path) as f:
+    cfg = yaml.safe_load(f)
+    # Create absolute paths in memory without modifying the original file
+    cfg = {
+        **cfg,  # Unpack all original config
+        'checkpoint_fp': str(current_directory / cfg['checkpoint_fp']),
+        'bfm_fp': str(current_directory / cfg['bfm_fp'])
+    }
 # Prepare the Data
 experiment_type = 'restyle_e4e_ffhq' # can choose between e4e and pSp encoding
 # Inversion iteration Higher means getting closer. But sometimes 1 iteration produce good results
 n_iters_per_batch = 3
 # Input image
-face_img_path = '/home/ci3d/repository/3D-GANTex/input_data/00012.png' # Change the file name here
+face_img_path = 'input_data/00012.png' # Change the file name here
 pose_img_path = f'output_data/{face_img_path.split("/")[-1].replace(".png", "")}_pose' + '.png' # Change the file name here
 uv_tex_path = f'output_data/{face_img_path.split("/")[-1].replace(".png", "")}_uv_tex' + '.png'# Change the file name here
 obj_tex_path = f'output_data/{face_img_path.split("/")[-1].replace(".png", "")}_obj' + '.obj'
@@ -135,6 +146,7 @@ editor = FaceEditor(stylegan_generator=net.decoder, generator_type=GeneratorType
 
 print(f"Performing edit for {edit_direction}...")
 input_latent = torch.from_numpy(result_latents[0][-1]).unsqueeze(0).cuda()
+print(type(landmarks_transform))
 edit_images, edit_latents = editor.edit(latents=input_latent,
                                         direction=edit_direction,
                                         factor_range=(min_value, max_value),

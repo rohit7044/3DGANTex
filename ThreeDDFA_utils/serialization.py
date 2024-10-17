@@ -62,7 +62,7 @@ def ser_to_ply_single(ver_lst, tri, height, wfp, reverse=True):
                 else:
                     f.write(f'3 {idx1} {idx2} {idx3}\n')
 
-        print(f'Dump tp {wfp_new}')
+        print(f'Dump to {wfp_new}')
 
 
 def ser_to_ply_multiple(ver_lst, tri, height, wfp, reverse=True):
@@ -96,7 +96,7 @@ def ser_to_ply_multiple(ver_lst, tri, height, wfp, reverse=True):
                 else:
                     f.write(f'3 {idx1 + offset} {idx2 + offset} {idx3 + offset}\n')
 
-    print(f'Dump tp {wfp}')
+    print(f'Dump to {wfp}')
 
 
 def get_colors(img, ver):
@@ -134,7 +134,7 @@ def ser_to_obj_single(img, ver_lst, tri, height , wfp):
                 idx1, idx2, idx3 = tri[i]  # m x 3
                 f.write(f'f {idx3 + 1} {idx2 + 1} {idx1 + 1}\n')
 
-        print(f'Dump tp {wfp_new}')
+        print(f'Dump to {wfp_new}')
 
 
 def ser_to_obj_multiple(img, ver_lst, tri, height, wfp):
@@ -173,7 +173,7 @@ def ser_to_obj_multiple(img, ver_lst, tri, height, wfp):
                 idx1, idx2, idx3 = tri[j]  # m x 3
                 f.write(f'f {idx3 + 1 + offset}/{idx3 + 1 + offset} {idx2 + 1 + offset}/{idx2 + 1 + offset} {idx1 + 1 + offset}/{idx1 + 1 + offset}\n')
 
-    print(f'Dump tp {wfp}')
+    print(f'Dump to {wfp}')
 
 
 ser_to_ply = ser_to_ply_multiple  # ser_to_ply_single

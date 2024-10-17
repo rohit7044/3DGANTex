@@ -15,6 +15,19 @@ face shape.
 
 ![workflow](https://lucid.app/publicSegments/view/8ff49995-cb25-47ae-9dca-5aa88caee4a9/image.jpeg)
 
+
+## Update v1.0
+1. Cleaned up some dependency issues.
+2. Made a standalone argument based code `main.py`. Just install the requirements push the arguments and go!
+
+Argument example:
+~~~
+python main.py --input "input_data/00012.png" --pose-min -3 --pose-max 5 --center-pose 1 --output-dir "output" --show-3d
+~~~
+
+
+
+
 ## Requirements
 1. Ubuntu 22.04
 2. Python 3.8
@@ -27,6 +40,7 @@ face shape.
 9. pyrallis
 10. onnx
 11. onnxruntime
+12. Open3D (for 3D visualization)
 
 ## StyleGAN3 Encoder
 Download the pretrained encoder from the following links and keep it on `pretrained_model` folder
@@ -37,12 +51,12 @@ Download the pretrained encoder from the following links and keep it on `pretrai
 | [ReStyle-e4e Human Faces](https://drive.google.com/file/d/1z_cB187QOc6aqVBdLvYvBjoc93-_EuRm/view) | ReStyle-e4e trained on the [FFHQ](https://github.com/NVlabs/ffhq-dataset) dataset over the StyleGAN3 generator. |
 
 ## 3DDFA Weights
-Please go to 
+Please go to the following directory: 
 
 ~~~
 3D-GANTex/ThreeDDFA_weights/weights
 ~~~
-and follow the instructions there :)
+and follow the instructions in readme.md 
 
 ## Usage
 1. Clone the Repo:
