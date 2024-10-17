@@ -121,7 +121,7 @@ class FaceProcessor:
             output_paths = self._generate_3d_reconstruction(frontal_face)
             
             # Save pose images
-            output_paths['pose'] = self._save_pose_images(edit_images)
+            output_paths['pose'] = self._save_pose_images(edit_images, concatenate=True)
             
             if options.show_3d:
                 self._visualize_3d(output_paths['obj'])
@@ -325,30 +325,46 @@ class FaceProcessor:
         except Exception as e:
             raise RuntimeError(f"3D reconstruction failed: {str(e)}")
     
-    def _save_pose_images(self, images: List[Image.Image]) -> Path:
+    def _save_pose_images(self, images: List[Image.Image], concatenate: bool = True) -> List[Path]:
         """
-        Save multi-pose visualization.
-        
+        Save multi-pose visualization, either as a concatenated image or individual files.
+
         Args:
             images: List of pose variations
-            
+            concatenate: If True, concatenate images horizontally. If False, save individually.
+
         Returns:
-            Path to saved image
+            Path to saved concatenated image if concatenate=True, or list of paths to individual images if concatenate=False
         """
         logger.info("Saving pose variations...")
         try:
-            # Create concatenated image
-            res = np.array(images[0].resize((512, 512)))
-            for image in images[1:]:
-                res = np.concatenate([res, image.resize((512, 512))], axis=1)
-            
-            # Save result
             output_paths = self.config.get_output_paths()
-            pose_img = Image.fromarray(res).convert("RGB")
-            pose_img.save(str(output_paths['pose']))
-            
-            return output_paths['pose']
-            
+            base_path = output_paths['pose']
+
+            if concatenate:
+                # Create concatenated image
+                res = np.array(images[0].resize((512, 512)))
+                for image in images[1:]:
+                    res = np.concatenate([res, image.resize((512, 512))], axis=1)
+                
+                # Save concatenated result
+                pose_img = Image.fromarray(res).convert("RGB")
+                pose_img.save(str(base_path))
+                return base_path
+            else:
+                # Save individual images
+                saved_paths = []
+                stem = base_path.stem
+                suffix = base_path.suffix
+                
+                for idx, image in enumerate(images):
+                    individual_path = base_path.parent / f"{stem}_{idx}{suffix}"
+                    resized_img = image.resize((512, 512))
+                    resized_img.save(str(individual_path))
+                    saved_paths.append(individual_path)
+                
+                return saved_paths
+
         except Exception as e:
             raise RuntimeError(f"Failed to save pose images: {str(e)}")
     
